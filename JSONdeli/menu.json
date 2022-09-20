@@ -1,0 +1,23 @@
+{
+    "appetizers":{
+        "salad":["ceaser dressing", "carrots","crutons"],
+        "fruit cup":["mixed fruit"]
+    },
+
+    "cold sandwiches":{
+        "turkey club":["turkey","avocado","bacon","lettuce"],
+        "pimento":["pimento cheese","chicken"]
+    },
+    
+     "hot sandwiches":{
+        "chicken":["hot chicken","lettuce", "onion","basil mayo"],
+        "cheeseburger":["angus beef","american cheese","lettuce","tomato", "onion"]
+    },
+
+     "desserts":{
+        "icecream sandwich":["vanilla or choclate"],
+        "cookie":["choclate chip"]
+    },
+
+     "drinks":["soda","water"]
+}

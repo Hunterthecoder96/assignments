@@ -1,0 +1,8 @@
+#time-display{
+    color: green;
+   grid-template-rows: 2/4;
+   grid-template-rows: 2/4;
+}
+body{
+    background-color: black;
+}

@@ -1,3 +1,36 @@
-.Recipes{
-    color: red
+ #grid{
+     display:grid;
+    grid-template-columns:  repeat(autofit) 1500px;
+    margin:0%;
+    padding:0%;
+ }
+
+ h1{
+     background-color: tan;
+     grid-column:1/-1;
+     text-align: center;
+     padding: 0px;
+
+ }
+ nav{
+     background-color: gray;
+     border: 10px black;
+     grid-column:1/2;
+     Width: 300px;
+ }
+ nav > div{
+     border: 5px  black;
+     border-radius: 5px;
+     text-align: center;
+    
+ }
+body{
+    background-color: black;
+}
+footer{
+    background-color: tan;
+    text-align:center
+}
+#content{
+    grid-column:2/3 ;
 }

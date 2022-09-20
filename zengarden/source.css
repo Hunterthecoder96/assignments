@@ -1,0 +1,85 @@
+html{
+    margin:0;
+    padding:0;
+}
+.container{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.header{
+   grid-column:1/7;
+   background-image:url(http://www.csszengarden.com/214/huntington.jpg);
+   grid-row: 1/2;
+   background-size:90%;
+
+}
+
+.title{
+    font-size:30px;
+    text-align:center;
+    padding:20px 0px;
+}
+.beauty{
+    display:block;
+    margin:0;
+    font-style: italic;
+    text-align: center;
+    padding:0px  80px 80px;
+}
+
+.authors{
+    grid-row: 2/7;
+    grid-column: 5/7;
+    background-color: silver;
+    text-align:center;
+
+}
+
+
+.designs{
+    grid-column:5 / 7;
+    text-align:center;
+    background-color: darkblue;
+    color:white;
+    padding: 60px 0px 70px 0px;
+} 
+.container{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.icons{
+    display:flex;
+    align-items: center;
+    flex-direction: row;
+    grid-row: 3/5;
+    grid-column:7/8;
+    margin: 75%;
+    background-color: grey;
+
+}
+
+
+ .beef{
+    grid-column-start:1;
+    grid-column-end:5;
+    grid-row-start: 2;
+    align-items: center;
+    font-style: italic;
+    }
+
+
+.par1{
+    font-size: xx-large;
+}
+.par4{
+    background-color: lightgreen;
+    padding:0;
+}
+.par5{
+     background-color: lightgreen;
+     padding:0;
+}

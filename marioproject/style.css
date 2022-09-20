@@ -1,0 +1,14 @@
+body{
+    background-color: greenyellow;
+}
+header{
+    background-color: yellow;
+    font-size: 50px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+footer{
+    font-size: x-small;
+    margin-top: 400px;
+}

@@ -1,0 +1,45 @@
+html, body {
+    background-color: rgb(128, 94, 94);
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+header {
+    font-size: 50px;
+    background-color: tan;
+    text-align: center;
+    grid-column: 1 / 4;
+}
+
+nav {
+    width: 100px;
+    height:500px;
+    background-color: grey;
+    grid-column: 1 / 2;
+}
+
+nav > button {
+    border: 1px solid black;
+    border-radius: 3px;
+    text-align: center;
+    width: 100px;
+    padding: 10px;
+    margin:10px 0px;
+}
+main{
+    grid-column: 2/4;
+    
+}
+
+footer {
+    grid-column: 1/4;
+    text-align: center;
+    background-color: black;
+    color:aqua
+}

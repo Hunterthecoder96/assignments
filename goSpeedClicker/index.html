@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="source.css">
+</head>
+
+
+<body>
+    <div>
+        <h1 id="time-display"></h1>
+    </div>
+
+    <script>
+        var display = document.getElementById('time-display');
+
+        function getTime(){
+            var now = new Date();
+            var hour = now.getHours();
+            var min = now.getMinutes();
+            var sec = now.getSeconds();
+
+            display.textContent = `${hour}:${min}:${sec}`}
+
+        setInterval(getTime, 1000)
+        
+    </script>
+</body>
+
+
+</html>
