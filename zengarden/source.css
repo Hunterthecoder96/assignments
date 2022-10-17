@@ -9,30 +9,34 @@ html{
     "header header"
     "main main"
     "footer footer"
-    "sidebar sidebar";
+    "sidebar sidebar" ;
+    grid-template-rows: repeat (6, auto);
     grid-template-columns: 2fr 1fr
+
 }
 
 .header{
-   grid-column:1/7;
+
    background-image:url(http://www.csszengarden.com/214/huntington.jpg);
-   grid-row: 1/2;
    background-size:90%;
    grid-area: header;
    background-position: 0 0, 0 0, -5px -25px, 0 50%;
 }
 
 .title{
-    font-size:30px;
+    font-size:3.2em;
     text-decoration-color: white;
     text-align:center;
-    padding:20px 0px
+    padding:20px 0px;
+    font-family:'Julius Sans One', sans-serif;
+    
 }
 .beauty{
     display:block;
     margin:0;
     font-style: italic;
     text-align: center;
+    color:rgba(255,255,255,0.6);
     padding:0px  80px 80px;
 }
 
@@ -41,7 +45,7 @@ html{
     background-color: #c0cac3 ;
     border-top:solid 1px #d9e3dc;
     font-style:italic;
-    padding:10%;
+    padding:1.5em 10%;
     float:left;
     grid-area: sidebar
 
@@ -65,38 +69,56 @@ html{
     grid-column: 1/3;
     opacity:0.5;
     text-align:center;
-    background-color: darkblue;
-    color:white;
+    color: rgba(255,255,255,0.65);
+    background-color: #ffffffa6;
     padding: 60px 0px 70px 0px;
     grid-area:subheader;
 } 
 
 
-.icons{
+.footer{
     display:flex;
     justify-content: center;
     height:100px;
-    background-color: grey;
-    grid-area:footer
+    background-color: #134347;
+    grid-area:footer;
+    grid-column: 1/3;
+    
+     
 
 }
-.icons >div {
-    padding:20px;
+
+.icons{
+    display:flex;
+    justify-content:center;
+    
+}
+.icons >a {
+    padding:3em ;
 
 }
 
  .beef{
-    grid-column:1/2 ;
+    grid-area:main; 
     align-items: center;
-    font-family: "Libre Baskerville", sans-serif;
-    font-size: 70%;
     color: #325050;
     background-position: 0 0, 0 0, -5px -25px, 0 50%;
     }
-
-
-.par1{
-    font-size: xx-large;
+p{
+    font-size: 1em;
+    font-family:'Libre Bakerville',sans-serif;
+    display:block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin:o.75em 0;
+    width:80%;
+}
+h3{
+    font-size:1.8em;
+    font-family: 'Julius Sans One', sans-serif;
+    width:80%;
 }
 
  /* fix the background image and blank space */
@@ -110,13 +132,23 @@ html{
 }
 
 
-/* wont seem to work the way I intended to */
-@media (min-width: 1000px){
-    .container{
-        grid-template-areas: 
-        "header header"
-        "main sidebar"
-        "footer footer";
+@media (min-width:1000px){
+    container{
+    grid-template-rows: repeat (6, auto);
+    grid-template-columns: 2fr 1fr
+    }
+
+    .authors{
+        grid-column: 2/3;
+        grid-row:2/3;
+    }
+    .beef{
+        grid-column: 1/2;
+
+
+    }
+    .designs{
+        grid-column:2/3;
     }
 
 }
