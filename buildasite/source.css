@@ -8,20 +8,35 @@ html, body {
 #grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:1fr 40fr 1fr
 }
 
-header {
+.header {
+    /* display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr; */
     font-size: 50px;
-    background-color: tan;
+    background-color: white;
     text-align: center;
     grid-column: 1 / 4;
+    grid-row:1/2;
+    position:relative
 }
+.title{
+    grid-column:2/3;
+    grid-row:1/2;
+}
+/* .logo{
+    grid-column:2/3;
+    grid-row:1/2;
+    margin-left:300px
+} */
 
-nav {
+.nav {
     width: 100px;
-    height:500px;
     background-color: grey;
     grid-column: 1 / 2;
+    grid-row: 2 / 3;
 }
 
 nav > button {
@@ -34,12 +49,17 @@ nav > button {
 }
 main{
     grid-column: 2/4;
+    grid-row: 2/3;
     
 }
 
-footer {
-    grid-column: 1/4;
+.footer {
+    
     text-align: center;
     background-color: black;
-    color:aqua
+    color: aqua;
+    bottom: 0;
+    width: 100%;
+    grid-row: 3/4;
+    grid-column: 1/4;
 }

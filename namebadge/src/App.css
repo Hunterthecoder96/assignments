@@ -1,0 +1,16 @@
+form{
+    align-items:center;
+    margin-left: 500px;
+}
+
+.domPost{
+    border:solid black;
+    margin-left:500px;
+    display:inline-block;
+}
+body{
+    background-color: darkgreen;
+}
+.mainer{ 
+    margin-left:500px;
+}
