@@ -1,26 +1,24 @@
-h1{
-    border:3px solid black;
-    background-color: white;
-    height:500px;
-    width:500px;
-    text-align: middle;
-    margin-left:250px;
-    display:flex;
-    justify-content:center; 
-    
+h1 {
+  border: 3px solid black;
+  background-color: white;
+  height: 500px;
+  width: 500px;
+  text-align: middle;
+  margin-left: 250px;
+  display: flex;
+  justify-content: center;
 }
-.die{
-    display: flex;
-    margin: 10px;
+.die {
+  display: flex;
+  margin-left: 550px;
 }
-.die>Die{
-    margin:10px;
+.square {
+  margin: 20px;
 }
-button{
-    font-size:50px;
-    margin-left: 815px;
-
+button {
+  font-size: 50px;
+  margin-left: 815px;
 }
-body{
-    background-color: black;
+body {
+  background-color: black;
 }
