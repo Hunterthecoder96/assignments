@@ -1,0 +1,37 @@
+header {
+  background-color: red;
+  padding: 0px;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.container {
+  display: flex;
+}
+.menu {
+  background-color: paleturquoise;
+  display: inline-block;
+  width: 200px;
+  min-height: 35px;
+  border: 3px solid #2196f3;
+  outline: none;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 50px;
+  transform: skewY(-11deg);
+  color: white;
+  text-decoration: underline;
+  text-underline-position: under;
+  padding: 0%;
+  position: relative;
+  bottom: 170px;
+  left: 10px;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "bountyhunter",
+  "version": "1.0.0",
+  "description": "bounty hunter assignment",
+  "main": "server.js",
+  "scripts": {
+    "test": "helloworld"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.6.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.22",
+    "uuidv4": "^6.2.13"
+  },
+  "proxy": "http://localhost:9000"
+}

@@ -1,0 +1,112 @@
+.Header {
+  background-color: black;
+  height: 100px;
+  text-align: center;
+}
+.link {
+  text-decoration: none;
+  color: #f8f8f8;
+  font-size: 22px;
+  padding: 2px 8px;
+  margin: 0px 8px;
+}
+
+.home {
+  border: solid 2px black;
+}
+.weekly {
+  display: flex;
+}
+
+.test {
+  background-color: blueviolet;
+}
+body {
+  background-color: rgb(77, 77, 131);
+  background-image: url('https://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/1317/2020/02/17224704/winter_indiana_thinkstockphotos-494002992.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: stretch;
+}
+
+.card-description {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  border: black solid 1px;
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  background-color: bisque;
+  min-width: 250px;
+  min-height: 200px;
+}
+.card-description > div {
+  margin: 10px;
+}
+.search {
+  text-align: center;
+  padding: 1rem;
+}
+.story {
+  height: 100px;
+  width: 300px;
+  margin-top: 10px;
+}
+
+.search > input {
+  padding: 0.7rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.container {
+  padding: 20px;
+}
+
+.card-container {
+  display: flex;
+}
+.story {
+  vertical-align: top;
+}
+
+.fiveCard-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.item-aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-body {
+  padding: 10px;
+  margin: 10px;
+}
+
+@media (max-width: 1200px) {
+  .fiveCard-container {
+    display: flex;
+    flex-direction: column;
+
+    background-color: aquamarine;
+  }
+  .card {
+    margin: 5;
+    padding: 0;
+  }
+  .link {
+    font-size: medium;
+  }
+  h1.link {
+    padding-bottom: 15px;
+  }
+}

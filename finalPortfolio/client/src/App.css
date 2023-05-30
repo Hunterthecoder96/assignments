@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header {
+  background-color: rgb(8, 8, 74);
+  text-align: center;
+  padding-bottom: 20px;
+}
+.header-text {
+  color: rgb(34, 146, 146);
+}
+.about {
+  padding-left: 50px;
+  background-color: rgb(99, 99, 202);
+}
+.About-Par {
+  padding-left: 70px;
+  display: flex;
+  font-size: larger;
+  color: bisque;
+}
+.About-Hunter {
+  font-size: 100px;
+  color: rgb(104, 170, 205);
+}
+.About-SkillList {
+  padding-top: 45px;
+  padding-bottom: 100px;
+  padding-left: 1400px;
+}
+.About-Skills {
+  font-size: 80px;
+  color: rgb(104, 170, 205);
+}
+.skills {
+  display: flex;
+}
+.skills > p {
+  padding-left: 50px;
+  padding-bottom: 15px;
+  color: bisque;
+}
+
+.portfolio {
+  background-color: rgb(99, 99, 202);
+}
+.MyProjects {
+  color: rgb(104, 170, 205);
+  font-size: 80px;
+  padding-left: 70px;
+}
+.project-photo {
+  width: 500px;
+}
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.project-display {
+  overflow: hidden;
+}

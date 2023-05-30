@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Header {
+  text-align: center;
+  color: aqua;
+  background-color: rgb(16, 24, 49);
+  margin-top: 0;
+  padding-bottom: 10px;
+  border: 3px solid aqua;
+}
+
+.About-Hunter {
+  color: aqua;
+}
+
+.About-Title {
+  text-decoration: underline;
+  padding-top: 40px;
+  margin: 35px;
+  color: aqua;
+}
+
+.about {
+  background-color: rgb(9, 5, 89);
+  margin-top: -5px;
+  border: 3px solid aqua;
+}
+.About-Par {
+  color: white;
+  margin: 35px;
+}
+
+.About-Skills {
+  color: aqua;
+  text-decoration: underline overline;
+  margin: 0 auto;
+  text-align: center;
+}
+.About-SkillList {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  color: white;
+}
+
+.About-SkillList > p {
+  padding: 10px;
+}
+
+.project-photo {
+  width: 500px;
+}
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(9, 5, 89);
+  border: 3px solid aqua;
+  color: white;
+}
+
+.portfolio-container {
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.MyProjects {
+  color: aqua;
+  text-decoration: underline;
+  padding-left: 35px;
+}
+.project-display {
+  padding-bottom: 20px;
+  border: 1px solid aqua;
+  overflow: hidden;
+}
+
+.contact-container {
+  background-color: rgb(9, 5, 89);
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-header {
+  text-decoration: underline;
+}

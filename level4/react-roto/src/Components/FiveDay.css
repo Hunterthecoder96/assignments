@@ -1,0 +1,7 @@
+.card-container {
+  display: flexbox;
+  flex-direction: column;
+}
+.card {
+  flex-wrap: wrap;
+}

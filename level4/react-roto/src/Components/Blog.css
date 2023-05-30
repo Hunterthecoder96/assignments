@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.story {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+}
+
+.storyBox span {
+  position: absolute;
+  left: 0;
+  padding-top: 25px;
+}
+
+.storyBox textarea:valid ~ span {
+  color: black;
+  transform: translatey(-4px);
+  font-size: 1em;
+  padding: 0 0px;
+  margin-left: 185px;
+
+  background: #5d9ccf;
+  border-radius: 4px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+button {
+  margin-right: 20px;
+}

@@ -1,0 +1,13 @@
+Form {
+  background-color: blue;
+  width: 100vw;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+Form > input {
+  margin: 10px;
+}

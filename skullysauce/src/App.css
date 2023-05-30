@@ -1,0 +1,42 @@
+.links {
+  font-size: 20px;
+  padding: 10px;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  height: 100vh;
+  width: 100%;
+}
+body {
+  overflow: hidden;
+  font-size: 10px;
+}
+.header {
+  align-self: flex-center;
+  flex-direction: column;
+  background-color: burlywood;
+  width: 100vw;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+.Hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #ede2c2;
+  box-shadow: 0 -16px 10px 5px rgba(0, 0, 0, 0.5);
+}
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.footer > h3 {
+  padding: 1rem;
+}
