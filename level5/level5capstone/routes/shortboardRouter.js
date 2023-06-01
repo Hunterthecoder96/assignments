@@ -1,11 +1,11 @@
 const express = require('express');
 const shortboardRouter = express.Router();
-const shortboards = require('../models/shortboard');
+const Shortboard = require('../models/Shortboard');
 
 // shortboardRouter.use(express.json());
 
 shortboardRouter.get('/', (req, res, next) => {
-  shortboards.find((err, shortboard) => {
+  Shortboard.find((err, shortboard) => {
     if (err) {
       res.status(500);
       return next(err);
@@ -15,7 +15,7 @@ shortboardRouter.get('/', (req, res, next) => {
 });
 
 shortboardRouter.post('/', (req, res, next) => {
-  const newShortboard = new shortboards(req.body);
+  const newShortboard = new Shortboard(req.body);
   newShortboard.save((err, savedShortboards) => {
     if (err) {
       res.status(500);
@@ -23,6 +23,34 @@ shortboardRouter.post('/', (req, res, next) => {
     }
     return res.status(201).send(savedShortboards);
   });
+});
+
+shortboardRouter.delete('/:shortboardId', (req, res) => {
+  Shortboard.findOneAndDelete(
+    { _id: req.params.shortboardId },
+    (err, deletedItem) => {
+      if (err) {
+        res.status(500);
+        return next(err);
+      }
+      return res.status(200).send('successfully deleted shortboard');
+    }
+  );
+});
+
+shortboardRouter.put('/:shortboardId', (req, res) => {
+  Shortboard.findOneAndUpdate(
+    { _id: req.params.shortboardId },
+    req.body,
+    { new: true },
+    (err, updatedShortboard) => {
+      if (err) {
+        res.status(500);
+        return next(err);
+      }
+      return res.status(201).send(updatedShortboard);
+    }
+  );
 });
 
 module.exports = shortboardRouter;

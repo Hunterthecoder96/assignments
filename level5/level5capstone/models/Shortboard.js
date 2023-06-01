@@ -16,4 +16,4 @@ const shortboardSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model('shortboard', shortboardSchema);
+module.exports = mongoose.model('Shortboard', shortboardSchema);

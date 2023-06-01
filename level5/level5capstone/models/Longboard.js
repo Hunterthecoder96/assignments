@@ -7,7 +7,7 @@ const longboardSchema = new Schema({
     required: true,
   },
   size: {
-    type: Number,
+    type: String,
     required: true,
   },
   value: {
@@ -16,4 +16,4 @@ const longboardSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model('longboard', longboardSchema);
+module.exports = mongoose.model('Longboard', longboardSchema);

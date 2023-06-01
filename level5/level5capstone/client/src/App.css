@@ -1,0 +1,19 @@
+* {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Header {
+  background-color: #61dafb;
+  padding-bottom: 20px;
+}
+.Header > h1 {
+  margin-bottom: 20px;
+}
+.link {
+  padding: 2px 8px;
+  margin: 0px 8px;
+  text-decoration: none;
+}
