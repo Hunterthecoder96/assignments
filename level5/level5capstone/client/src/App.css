@@ -17,3 +17,22 @@
   margin: 0px 8px;
   text-decoration: none;
 }
+.card {
+  border: black solid 2px;
+  max-width: 250px;
+  height: 350px;
+  margin: 10px;
+}
+.card > img {
+  max-height: auto;
+  max-width: 100%;
+}
+.board-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.card-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

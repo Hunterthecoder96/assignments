@@ -16,15 +16,18 @@ export default function Longboards() {
   }
 
   return (
-    <div>
+    <div className="board-wrap">
       Longboards
-      {longboard.map((board) => (
-        <div key={board.id}>
-          <h1>{board.brand}</h1>
-          <h2>{board.size}</h2>
-          <h3>${board.value}</h3>
-        </div>
-      ))}
+      <div className="card-wrap">
+        {longboard.map((board) => (
+          <div className="card" key={board.id}>
+            <h1 className="brand">{board.brand}</h1>
+            <h2 className="size">{board.size}</h2>
+            <h3 className="value">${board.value}</h3>
+            <img src={board.image} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
