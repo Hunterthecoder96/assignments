@@ -22,6 +22,7 @@
   max-width: 250px;
   height: 350px;
   margin: 10px;
+  box-shadow: 6px 4px rgb(40, 40, 40);
 }
 .card > img {
   max-height: auto;
@@ -35,4 +36,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+.naturalArt {
+  /* text-align: left; */
+  text-shadow: 5px 5px 6px;
 }
