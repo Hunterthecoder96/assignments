@@ -4,7 +4,6 @@ import axios from 'axios';
 export const UserContext = React.createContext();
 
 const userAxios = axios.create();
-
 userAxios.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   config.headers.Authorization = `Bearer ${token}`;
@@ -15,12 +14,12 @@ export default function UserProvider(props) {
   const initState = {
     user: JSON.parse(localStorage.getItem('user')) || {},
     token: localStorage.getItem('token') || '',
-    issues: [],
+    boards: [],
   };
 
   const [userState, setUserState] = useState(initState);
+  const [publicSurfboards, setPublicSurfboards] = useState([]);
 
-  const [publicIssues, setPublicIssues] = useState([]);
   function signup(credentials) {
     axios
       .post('/auth/signup', credentials)
@@ -53,14 +52,13 @@ export default function UserProvider(props) {
       })
       .catch((err) => console.log(err.response.data.errMsg));
   }
-
   function logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     setUserState({
       user: {},
       token: '',
-      issues: [],
+      boards: [],
     });
   }
   function handleAuthErr(errMsg) {
@@ -69,76 +67,46 @@ export default function UserProvider(props) {
       errMsg,
     }));
   }
-
   function resetAuthErr() {
     setUserState((prevState) => ({
       ...prevState,
       errMsg: '',
     }));
   }
-  function getAllIssues() {
-    userAxios
-      .get('/api/issue')
-      .then((res) => setPublicIssues(res.data))
-      .catch((err) => console.log(err));
-  }
 
-  function getUserIssue() {
+  console.log(userState);
+  //BoardForm
+  function addBoard(newBoard) {
     userAxios
-      .get('/api/issue/user')
+      .post('/api/surfboard', newBoard)
       .then((res) => {
         setUserState((prevState) => ({
           ...prevState,
-          issues: res.data,
+          boards: [...prevState.boards, res.data],
         }));
       })
       .catch((err) => console.log(err.response.data.errMsg));
   }
 
-  function addIssue(newIssue) {
+  function getAllSurfboards() {
     userAxios
-      .post('/api/issue/user', newIssue)
+      .get('/api/surfboard')
+      .then((res) => {
+        setPublicSurfboards(res.data);
+      })
+      .catch((err) => console.log(err));
+  }
+
+  function getUserBoard() {
+    userAxios
+      .get('/api/surfboard/user')
       .then((res) => {
         setUserState((prevState) => ({
           ...prevState,
-          issues: [...prevState.issues, res.data],
+          boards: res.data,
         }));
       })
       .catch((err) => console.log(err.response.data.errMsg));
-  }
-
-  function likeIssue(issueId) {
-    userAxios
-      .put(`/api/public/like/${issueId}`)
-      .then((res) => {
-        setUserState((prevUserState) => ({
-          ...prevUserState,
-          posts: prevUserState.issues.map((issue) =>
-            issueId !== issue._id ? issue : res.data
-          ),
-        }));
-        setPublicIssues((prevIssues) =>
-          prevIssues.map((issue) => (issue._id !== issueId ? issue : res.data))
-        );
-      })
-      .catch((err) => console.log(err));
-  }
-
-  function unlikeIssue(issueId) {
-    userAxios
-      .put(`/api/public/dislike/${issueId}`)
-      .then((res) => {
-        setUserState((prevUserState) => ({
-          ...prevUserState,
-          posts: prevUserState.issues.map((issue) =>
-            issueId !== issue._id ? issue : res.data
-          ),
-        }));
-        setPublicIssues((prevIssues) =>
-          prevIssues.map((issue) => (issue._id !== issueId ? issue : res.data))
-        );
-      })
-      .catch((err) => console.log(err));
   }
 
   return (
@@ -150,12 +118,10 @@ export default function UserProvider(props) {
         logout,
         handleAuthErr,
         resetAuthErr,
-        getAllIssues,
-        getUserIssue,
-        addIssue,
-        likeIssue,
-        unlikeIssue,
-        publicIssues,
+        addBoard,
+        getUserBoard,
+        getAllSurfboards,
+        publicSurfboards,
       }}
     >
       {props.children}

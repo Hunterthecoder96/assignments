@@ -10,14 +10,18 @@ const issueSchema = new Schema({
     type: String,
     required: true,
   },
-  upVotes: {
-    type: Number,
-    default: 0,
-  },
-  downVotes: {
-    type: Number,
-    default: 0,
-  },
+  upVotes: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+    },
+  ],
+  downVotes: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
+  ],
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',

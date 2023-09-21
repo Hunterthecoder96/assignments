@@ -3,6 +3,7 @@ const app = express();
 require('dotenv').config();
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const path = require('path');
 const { expressjwt } = require('express-jwt');
 
 app.use(express.json());
@@ -20,6 +21,7 @@ app.use(
   expressjwt({ secret: process.env.SECRET, algorithms: ['HS256'] })
 );
 app.use('/api/issue', require('./routes/issueRouter.js'));
+app.use('/api/public', require('./routes/publicRouter.js'));
 
 app.use((err, req, res, next) => {
   console.log(err);
@@ -29,6 +31,6 @@ app.use((err, req, res, next) => {
   return res.send({ errMsg: err.message });
 });
 
-app.listen(4100, () => {
+app.listen(4000, () => {
   console.log('server is running on local port 4000');
 });

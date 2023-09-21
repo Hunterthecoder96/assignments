@@ -27,7 +27,6 @@ export default function IssueForm(props) {
   }
 
   const { title, description } = inputs;
-  console.log('title', title, 'description', description);
   return (
     <form onSubmit={handleSubmit}>
       <input

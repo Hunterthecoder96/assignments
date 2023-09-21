@@ -6,7 +6,7 @@ import IssueList from './IssueList.js';
 export default function Profile() {
   const {
     user: { username },
-    issue,
+    issues,
     getUserIssue,
     addIssue,
   } = useContext(UserContext);
@@ -18,12 +18,12 @@ export default function Profile() {
   return (
     <div className="profile">
       <h1>Welcome @{username}!</h1>
-      <div>
-        <h2>What do you want to debate today?</h2>
-        <IssueForm addIssue={addIssue} />
-        <h2>Your posted Issues</h2>
-        <IssueList issue={issue} />
-      </div>
+
+      <h2>What do you want to debate today?</h2>
+      <IssueForm addIssue={addIssue} />
+
+      <h2>Your posted Issues</h2>
+      <IssueList issues={issues} />
     </div>
   );
 }

@@ -1,18 +1,19 @@
 import React, { useContext } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Navbar from './Components/Navbar';
-import Auth from './Components/Auth';
-import Profile from './Components/Profile';
-import Public from './Components/Public';
-import ProtectedRoute from './Components/ProtectedRoute';
+import Profile from './components/profile';
 import { UserContext } from './Context/UserProvider';
+import Auth from './components/Auth';
+import ProtectedRoute from './components/ProtectedRoute';
+import './App.css';
+import Navbar from './components/Navbar';
+import Public from './components/public';
+import SurfboardDetails from "./components/surfboardDetail"
 
 function App() {
   const { token, logout } = useContext(UserContext);
   return (
-    <div className="App">
+    <>
       <Navbar logout={logout} token={token} />
-
       <Routes>
         <Route
           path="/"
@@ -28,8 +29,9 @@ function App() {
           }
         />
         <Route path="/public" element={<Public />} />
+        <Route path="/surfboard/:id" element={<SurfboardDetails/>} />
       </Routes>
-    </div>
+    </>
   );
 }
 

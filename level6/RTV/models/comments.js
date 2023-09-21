@@ -1,15 +1,23 @@
 const mongoose = require('mongoose');
-const schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 const commentSchema = new Schema({
   title: {
     type: String,
     required: true,
   },
-  likes: {
-    type: Number,
-    default: 0,
-  },
+  upVotes: [
+    {
+      type: Number,
+      default: 0,
+    },
+  ],
+  downVotes: [
+    {
+      type: Number,
+      default: 0,
+    },
+  ],
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
