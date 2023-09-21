@@ -16,7 +16,6 @@
   background-color: rgb(99, 99, 202);
 }
 .About-Par {
-  padding-left: 70px;
   display: flex;
   font-size: larger;
   color: bisque;
@@ -28,38 +27,117 @@
 .About-SkillList {
   padding-top: 45px;
   padding-bottom: 100px;
-  padding-left: 1400px;
+  padding-left: 70px;
 }
 .About-Skills {
   font-size: 80px;
   color: rgb(104, 170, 205);
+  text-decoration: underline;
 }
 .skills {
   display: flex;
 }
+
 .skills > p {
   padding-left: 50px;
   padding-bottom: 15px;
   color: bisque;
 }
 
+.aboutMe {
+  font-size: 80px;
+  color: rgb(104, 170, 205);
+  text-decoration: underline;
+  padding-left: 1400px;
+}
+.aboutMe-par {
+  padding-left: 900px;
+  font-size: 45px;
+}
 .portfolio {
   background-color: rgb(99, 99, 202);
 }
 .MyProjects {
   color: rgb(104, 170, 205);
   font-size: 80px;
-  padding-left: 70px;
+  padding-left: 1400px;
+  text-decoration: underline;
 }
 .project-photo {
-  width: 500px;
+  width: 700px;
 }
 .portfolio {
   display: flex;
   flex-direction: column;
   color: white;
 }
+.project-description {
+  font-size: 30px;
+}
 
 .project-display {
   overflow: hidden;
+  display: flex;
+  margin-left: 900px;
+  margin-bottom: 20px;
+}
+.project-display > h3 {
+  font-size: 35px;
+  color: aqua;
+}
+
+.linkdinlogo {
+  color: blue;
+  height: 50px;
+  width: 50px;
+}
+.github-logo {
+  height: 50px;
+  width: 50px;
+}
+
+.html5,
+.css3,
+.javascript,
+.json,
+.postman,
+.github,
+.react,
+.mongodb,
+.vite,
+.nodemon,
+.jquery {
+  height: 50px;
+  width: 50px;
+}
+
+.html5 {
+  color: rgb(211, 145, 23);
+}
+.css3 {
+  color: blue;
+}
+.react {
+  color: rgb(52, 52, 238);
+}
+.mongodb {
+  color: green;
+}
+.postman {
+  color: orange;
+}
+.vite {
+  color: purple;
+}
+.jquery {
+  color: blue;
+}
+.javascript {
+  color: yellow;
+}
+.nodemon {
+  color: grey;
+}
+.json {
+  color: greenyellow;
 }
