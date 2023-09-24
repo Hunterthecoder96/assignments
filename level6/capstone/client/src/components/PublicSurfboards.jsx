@@ -6,9 +6,10 @@ export default function publicSurfboards() {
   const { publicSurfboards } = useContext(UserContext);
 
   return (
-    <div>
+    <div className="public-wrap">
       {publicSurfboards.map((surfboards) => (
         <BoardCard
+          className="publicboards"
           {...surfboards}
           key={surfboards._id}
           surfboardId={surfboards._id}

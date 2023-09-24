@@ -21,10 +21,14 @@ export default function Navbar(props) {
         <Link to="/public" className="nav">
           <span>Public</span>
         </Link>
-        {token && (
+        {token ? (
           <button onClick={logout} className="nav-logout ">
             Logout
           </button>
+        ) : (
+          <Link to="/">
+            <button className="nav-logout">Login/Signup</button>
+          </Link>
         )}
       </div>
     </div>

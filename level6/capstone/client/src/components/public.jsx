@@ -10,6 +10,7 @@ function Public() {
   }, []);
   return (
     <div>
+      <h4 className="subtitle">Boards from All users</h4>
       <PublicSurfboards surfboards={publicSurfboards} />
     </div>
   );

@@ -7,10 +7,10 @@ import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
 import Navbar from './components/Navbar';
 import Public from './components/public';
-import SurfboardDetails from "./components/surfboardDetail"
+import SurfboardDetails from './components/surfboardDetail';
 
 function App() {
-  const { token, logout } = useContext(UserContext);
+  const { token, logout, boards } = useContext(UserContext);
   return (
     <>
       <Navbar logout={logout} token={token} />
@@ -28,8 +28,12 @@ function App() {
             </ProtectedRoute>
           }
         />
+        {/* <Route path={`/surfboard/${_id}`} to={<SurfboardDetails />} /> */}
         <Route path="/public" element={<Public />} />
-        <Route path="/surfboard/:id" element={<SurfboardDetails/>} />
+        <Route
+          path="/surfboard/:id"
+          element={<SurfboardDetails boards={boards} />}
+        />
       </Routes>
     </>
   );

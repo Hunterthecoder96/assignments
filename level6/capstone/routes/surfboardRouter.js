@@ -1,6 +1,7 @@
 const express = require('express');
 const surfboardRouter = express.Router();
 const Surfboard = require('../models/surfboard');
+const surfboard = require('../models/surfboard');
 
 surfboardRouter.get('/', (req, res, next) => {
   Surfboard.find((err, surfboards) => {
@@ -60,6 +61,31 @@ surfboardRouter.put('/:surfboardId', (req, res, next) => {
       }
     }
   );
+});
+
+const handleStars = (surfboardId, req, res, next) => {
+  surfboard.findOne({ _id: surfboardId }, (err, surfboard) => {
+    if (err) {
+      return handleErrors(res, next, err);
+    }
+    if (surfboard['stars'].includes(req.auth._id)) {
+      surfboard.updateOne(
+        { _id: surfboardId },
+        { $addToSet: update },
+        { new: true },
+        (err, updatedStar) => {
+          if (err) {
+            return handleErrors(res, next, err);
+          }
+          return res.status(201).send(updatedStar);
+        }
+      );
+    }
+  });
+};
+
+surfboardRouter.put('/stars/:surfboardId', (req, res, next) => {
+  handleStars(req.params.surfboardId, req, res, next);
 });
 
 module.exports = surfboardRouter;

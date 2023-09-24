@@ -122,6 +122,7 @@ export default function UserProvider(props) {
         getUserBoard,
         getAllSurfboards,
         publicSurfboards,
+        setUserState,
       }}
     >
       {props.children}

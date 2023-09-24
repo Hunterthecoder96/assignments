@@ -1,17 +1,28 @@
 import React, { useState, useContext } from 'react';
 import { UserContext } from '../Context/UserProvider';
+import Rating from './Rating';
 
 const initInputs = {
   shaper: '',
   model: '',
   size: '',
   image: '',
+  rating: [{ score: 0 }],
+  description: '',
 };
 
 export default function BoardForm(props) {
   const [inputs, setInputs] = useState(initInputs);
 
   const { addBoard } = useContext(UserContext);
+
+  function handleRating(e) {
+    const { value } = e.target;
+    setInputs((prevInputs) => ({
+      ...prevInputs,
+      rating: [{ score: value }],
+    }));
+  }
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -26,7 +37,7 @@ export default function BoardForm(props) {
     setInputs(initInputs);
   }
 
-  const { shaper, model, size, image } = inputs;
+  const { shaper, model, size, image, rating, description } = inputs;
 
   return (
     <form className="boardForm-container" onSubmit={handleSubmit}>
@@ -61,6 +72,16 @@ export default function BoardForm(props) {
         value={image}
         onChange={handleChange}
         placeholder="URL"
+      />
+      <Rating onChange={handleRating} value={rating.score} />
+
+      <p>Thoughts about this board:</p>
+      <input
+        type="text"
+        name="description"
+        value={description}
+        onChange={handleChange}
+        placeholder="whats wrong with this board"
       />
 
       <button>Submit</button>

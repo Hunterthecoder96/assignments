@@ -119,12 +119,24 @@ body {
   height: 250px;
   width: 150px;
   margin: 10px;
+  text-decoration: none;
 }
 .card-shaper {
   text-decoration: underline;
   text-align: center;
   margin-top: 0;
   background-color: greenyellow;
+}
+
+/*public*/
+
+.public-wrap {
+  display: flex;
+}
+.subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Navbar */
@@ -170,4 +182,19 @@ body {
   transition: background-color 0.3s ease;
   justify-content: flex-end;
   margin-left: 10px;
+}
+
+/* Rating */
+.star-rating {
+  font-size: 24px;
+}
+
+.star {
+  cursor: pointer;
+  color: #ccc;
+  margin: 0 3px;
+}
+
+.selected {
+  color: gold;
 }

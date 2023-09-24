@@ -7,8 +7,6 @@ import { Link } from 'react-router-dom';
 function profile() {
   const {
     user: { username },
-    model,
-    shaper,
     boards,
     addBoard,
     getUserBoard,
@@ -26,9 +24,8 @@ function profile() {
       </div>
       <div className="section section-right">
         <h3>Here is your Quiver</h3>
-        
-          <BoardList boards={boards} />
-      
+
+        <BoardList boards={boards} />
       </div>
     </div>
   );
