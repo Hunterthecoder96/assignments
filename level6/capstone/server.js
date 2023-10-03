@@ -22,7 +22,10 @@ app.use(
 );
 app.use('/api/surfboard', require('./routes/surfboardRouter'));
 
-app.listen(6903, () => {
+app.use('/api/public', require('./routes/publicRouter'));
+app.use('/api/comment', require('./routes/commentRouter'));
+
+app.listen(6900, () => {
   console.log('server is running on local host 69');
 });
 

@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import BoardCard from './BoardCard';
 import { UserContext } from '../Context/UserProvider';
 
 export default function publicSurfboards() {
-  const { publicSurfboards } = useContext(UserContext);
-
+  const { publicSurfboards, getAllSurfboards } = useContext(UserContext);
+  useEffect(() => {
+    getAllSurfboards();
+  }, []);
   return (
     <div className="public-wrap">
       {publicSurfboards.map((surfboards) => (

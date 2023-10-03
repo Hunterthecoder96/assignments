@@ -19,8 +19,8 @@ const surfboardSchema = new Schema({
   rating: [
     {
       username: {
-          type: Schema.Types.ObjectId,
-          ref: 'User'
+        type: Schema.Types.ObjectId,
+        ref: 'User',
       },
       score: {
         type: Number,
@@ -37,6 +37,7 @@ const surfboardSchema = new Schema({
     ref: 'User',
     required: true,
   },
+  // comments: [commentSchema],
 });
 
 module.exports = mongoose.model('Surfboard', surfboardSchema);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export const UserContext = React.createContext();
@@ -19,6 +19,8 @@ export default function UserProvider(props) {
 
   const [userState, setUserState] = useState(initState);
   const [publicSurfboards, setPublicSurfboards] = useState([]);
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState({ text: '' });
 
   function signup(credentials) {
     axios
@@ -88,14 +90,47 @@ export default function UserProvider(props) {
       .catch((err) => console.log(err.response.data.errMsg));
   }
 
+  function getComments(comment) {
+    userAxios
+      .get('/api/comment')
+      .then((res) => {
+        setComments(res.data);
+      })
+      .catch((err) => console.log(err));
+  }
+
+  function handleChange(e) {
+    console.log(e);
+    const { name, value } = e.target;
+    setNewComment((prevState) => {
+      return {
+        ...prevState,
+        [name]: value,
+      };
+    });
+  }
+
+  function addComment(id) {
+    console.log('inside addcomment func', newComment);
+    userAxios
+      .post(`/api/comment/${id}`, newComment)
+      .then((res) => {
+        setComments((prevState) => [...prevState, res.data]);
+      })
+      .catch((err) => console.log(err.response.data.errMsg));
+  }
+
   function getAllSurfboards() {
     userAxios
-      .get('/api/surfboard')
+      .get('/api/public')
       .then((res) => {
         setPublicSurfboards(res.data);
       })
       .catch((err) => console.log(err));
   }
+  useEffect(() => {
+    getAllSurfboards();
+  }, []);
 
   function getUserBoard() {
     userAxios
@@ -113,6 +148,7 @@ export default function UserProvider(props) {
     <UserContext.Provider
       value={{
         ...userState,
+        comments,
         signup,
         login,
         logout,
@@ -123,6 +159,10 @@ export default function UserProvider(props) {
         getAllSurfboards,
         publicSurfboards,
         setUserState,
+        getComments,
+        addComment,
+        newComment,
+        handleChange,
       }}
     >
       {props.children}

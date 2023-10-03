@@ -76,7 +76,7 @@ export default function BoardForm(props) {
       <Rating onChange={handleRating} value={rating.score} />
 
       <p>Thoughts about this board:</p>
-      <input
+      <textarea
         type="text"
         name="description"
         value={description}
